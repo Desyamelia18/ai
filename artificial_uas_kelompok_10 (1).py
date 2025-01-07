@@ -10,11 +10,10 @@ Original file is located at
 """
 import pandas as pd
 
-df = pd.read_csv("https://raw.githubusercontent.com/Arinatyas/bismillah/refs/heads/main/indian_liver_patient.csv", encoding="utf-8")
+df = pd.read_csv("https://raw.githubusercontent.com/Desyamelia18/ai/refs/heads/main/indian_liver_patient.csv", encoding="utf-8")
 
 
 df['Gender'] = df['Gender'].apply(lambda x: 1 if x == 'Male' else 0)
-df
 
 df.isnull().sum()
 
@@ -33,7 +32,7 @@ df['Dataset'] = df['Dataset'].apply(lambda x: 1 if x == 1 else 0)
 output_csv_file = 'cleaned_data.csv'
 df.to_csv(output_csv_file, index=False)
 
-df = pd.read_csv('https://raw.githubusercontent.com/Arinatyas/bismillah/refs/heads/main/cleaned_data%20(1).csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Desyamelia18/ai/refs/heads/main/cleaned_data%20(1).csv')
 test_size = int(len(df) * 0.3)
 
 df = df.sample(frac=1, random_state=42).reset_index(drop=True)
